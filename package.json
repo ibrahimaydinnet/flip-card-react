@@ -1,0 +1,40 @@
+{
+    "name": "flip-card-react",
+    "version": "0.1.0",
+    "description": "A react component to card flip",
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "scripts": {
+        "build": "rm -rf ./lib/* && tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ibrahimaydinnet/flip-card-react.git"
+    },
+    "keywords": [
+        "react",
+        "react-component",
+        "react-flip-card",
+        "flip-card-react",
+        "flip-card"
+    ],
+    "author": "İbrahim Aydın",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ibrahimaydinnet/flip-card-react/issues"
+    },
+    "homepage": "https://github.com/ibrahimaydinnet/flip-card-react",
+    "files": [
+        "lib/**/*"
+    ],
+    "peerDependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.27",
+        "@types/react-dom": "^16.9.5",
+        "@types/styled-components": "^5.0.1",
+        "typescript": "^3.8.3"
+    }
+}
