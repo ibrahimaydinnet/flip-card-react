@@ -4,9 +4,7 @@ logs
 
 # Dependency directory
 /node_modules
-
-# Build directory
-/lib
+/examples/node_modules
 
 # Editor and other tmp files
 .vscode

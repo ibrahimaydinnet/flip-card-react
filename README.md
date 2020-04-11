@@ -7,7 +7,17 @@ A react component to card flip
 npm install flip-card-react
 ```
 
-## Example
+## Examples
+
+To try the examples locally:
+
+```bash
+cd examples/
+npm install
+npm start
+```
+
+## Usage
 
 ```js
 import React, { useState } from 'react';
