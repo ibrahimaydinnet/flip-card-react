@@ -1,0 +1,40 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.card {
+    padding: 10px;
+    border: solid;
+    position: relative;
+    background: #ccc
+}
+
+.face {
+    border: solid 1px;
+    border-radius: 5px;
+    color: #fff;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px
+}
