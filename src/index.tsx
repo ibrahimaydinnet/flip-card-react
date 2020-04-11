@@ -1,7 +1,12 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
-import {card, container} from './style';
-import Face, {FaceProps} from './components';
+import Face, {FaceProps} from './face';
+
+const cardStyle: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    position: 'relative'
+};
 
 interface FlipCardProps {
     front: React.ReactNode;
@@ -42,11 +47,9 @@ const FlipCard: React.FC<FlipCardProps> = (props) => {
     };
 
     return (
-        <div style={container}>
-            <div style={card}>
-                <Face {...frontProps} style={{zIndex:2}}>{front}</Face>
-                <Face {...backProps}>{back}</Face>
-            </div>
+        <div style={cardStyle}>
+            <Face {...frontProps} style={{zIndex:2}}>{front}</Face>
+            <Face {...backProps}>{back}</Face>
         </div>
     );
 };

@@ -31,9 +31,6 @@ const Face: React.FC<FaceProps> = (props) => {
         WebkitTransform: transform(direction)(deg),
         msTransform: transform(direction)(deg),
         OTransform: transform(direction)(deg),
-        transformStyle: "preserve-3d",
-        WebkitTransformStyle: "preserve-3d",
-        MozTransformStyle: "preserve-3d",
         position,
         ...props.style
     };
