@@ -3,9 +3,9 @@ interface FlipCardProps {
     front: React.ReactNode;
     back: React.ReactNode;
     isFlipped?: boolean;
-    direction?: 'horizontal' | 'vertical';
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
+    vertical?: boolean;
     perspective?: boolean;
     infinite?: boolean;
 }

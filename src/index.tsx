@@ -21,15 +21,15 @@ interface FlipCardProps {
     front: React.ReactNode;
     back: React.ReactNode;
     isFlipped?: boolean;
-    direction?: 'horizontal' | 'vertical';
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
+    vertical?: boolean;
     perspective? : boolean;
     infinite?: boolean;
 };
 
 const FlipCard: React.FC<FlipCardProps> = (props) => {
-    const {front, back, isFlipped, direction, speed, perspective, infinite} = props;
+    const {front, back, isFlipped, vertical, speed, perspective, infinite} = props;
     if (!front || !back) {
         throw new Error('FlipCard requires front and back components!');
     }
@@ -51,13 +51,13 @@ const FlipCard: React.FC<FlipCardProps> = (props) => {
 
     const frontProps: FaceProps = {
         speed,
-        direction,
+        vertical: !!vertical,
         deg: !!infinite ? deg : flipped ? 180 : 0,
         position: flipped ? 'relative' : 'absolute'
     };
     const backProps: FaceProps = {
         speed,
-        direction,
+        vertical: !!vertical,
         deg: !!infinite ? deg + 180 : flipped ? 0 : -180,
         position: flipped ? 'absolute' : 'relative'
     };
@@ -72,7 +72,6 @@ const FlipCard: React.FC<FlipCardProps> = (props) => {
 
 FlipCard.defaultProps = {
     isFlipped: false,
-    direction: 'horizontal',
     speed: 0.7
 };
 

@@ -3,17 +3,17 @@ import React from 'react';
 export interface FaceProps {
     speed?: number;
     deg: number;
-    direction?: 'horizontal' | 'vertical';
+    vertical: boolean;
     position: 'relative' | 'absolute';
     style?: React.CSSProperties;
 };
 
-type TransformType = (direction?: 'horizontal' | 'vertical') => (deg: number) => string;
+type TransformType = (vertical?: boolean) => (deg: number) => string;
 
-const transform: TransformType = direction => deg => direction === 'horizontal' ? `rotateY(${deg}deg)` : `rotateX(${deg}deg)`;
+const transform: TransformType = vertical => deg => vertical ? `rotateX(${deg}deg)` : `rotateY(${deg}deg)`;
 
 const Face: React.FC<FaceProps> = (props) => {
-    const { speed, direction, deg, position } = props;
+    const { speed, vertical, deg, position } = props;
     const style: React.CSSProperties = {
         top: 0,
         left: 0,
@@ -27,10 +27,10 @@ const Face: React.FC<FaceProps> = (props) => {
         backfaceVisibility: "hidden",
         WebkitBackfaceVisibility: "hidden",
         MozBackfaceVisibility: "hidden",
-        transform: transform(direction)(deg),
-        WebkitTransform: transform(direction)(deg),
-        msTransform: transform(direction)(deg),
-        OTransform: transform(direction)(deg),
+        transform: transform(vertical)(deg),
+        WebkitTransform: transform(vertical)(deg),
+        msTransform: transform(vertical)(deg),
+        OTransform: transform(vertical)(deg),
         position,
         ...props.style
     };

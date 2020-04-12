@@ -36,17 +36,17 @@ const Examples = (props) => {
             </div>
             <div className="column">
                 <div className="card">
-                    <FlipCard {...props} isFlipped={verticalFlipped} front={verticalFront} back={verticalBack} direction="vertical"/>
+                    <FlipCard {...props} isFlipped={verticalFlipped} front={verticalFront} back={verticalBack} vertical/>
                 </div>
             </div>
             <div className="column">
                 <div className="card">
-                    <FlipCard {...props} isFlipped={fastFlipped} front={fastFront} back={fastBack} direction="horizontal" speed={0.1}/>
+                    <FlipCard {...props} isFlipped={fastFlipped} front={fastFront} back={fastBack} speed={0.1}/>
                 </div>
             </div>
             <div className="column">
                 <div className="card">
-                    <FlipCard {...props} isFlipped={slowFlipped} front={slowFront} back={slowBack} direction="horizontal" speed={2}/>
+                    <FlipCard {...props} isFlipped={slowFlipped} front={slowFront} back={slowBack} speed={2}/>
                 </div>
             </div>
         </div>

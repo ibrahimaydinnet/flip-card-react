@@ -2,7 +2,7 @@ import React from 'react';
 export interface FaceProps {
     speed?: number;
     deg: number;
-    direction?: 'horizontal' | 'vertical';
+    vertical: boolean;
     position: 'relative' | 'absolute';
     style?: React.CSSProperties;
 }
