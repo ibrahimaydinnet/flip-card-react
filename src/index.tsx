@@ -25,20 +25,26 @@ interface FlipCardProps {
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
     perspective? : boolean;
+    infinite?: boolean;
 };
 
 const FlipCard: React.FC<FlipCardProps> = (props) => {
-    const {front, back, isFlipped, direction, speed, perspective} = props;
+    const {front, back, isFlipped, direction, speed, perspective, infinite} = props;
     if (!front || !back) {
         throw new Error('FlipCard requires front and back components!');
     }
 
     const [flipped, flip] = useState(!!isFlipped);
+    const [deg, rotate] = useState(0);
+
     useEffect(() => {
         if (!!isFlipped !== flipped) {
             flip(!!isFlipped);
             if (props.onFlip) {
                 props.onFlip(!!isFlipped);
+            }
+            if (!!infinite) {
+                rotate(x => x + 180)
             }
         }
     }, [isFlipped]);
@@ -46,13 +52,13 @@ const FlipCard: React.FC<FlipCardProps> = (props) => {
     const frontProps: FaceProps = {
         speed,
         direction,
-        deg: flipped ? 180 : 0,
+        deg: !!infinite ? deg : flipped ? 180 : 0,
         position: flipped ? 'relative' : 'absolute'
     };
     const backProps: FaceProps = {
         speed,
         direction,
-        deg: flipped ? 0 : -180,
+        deg: !!infinite ? deg + 180 : flipped ? 0 : -180,
         position: flipped ? 'absolute' : 'relative'
     };
 

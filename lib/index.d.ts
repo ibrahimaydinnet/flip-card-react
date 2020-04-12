@@ -7,6 +7,7 @@ interface FlipCardProps {
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
     perspective?: boolean;
+    infinite?: boolean;
 }
 declare const FlipCard: React.FC<FlipCardProps>;
 export default FlipCard;

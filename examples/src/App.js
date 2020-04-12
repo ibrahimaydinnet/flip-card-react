@@ -9,6 +9,8 @@ const App = () => {
                 <Examples/>
                 <h1>flip-card-react examples (perspective)</h1>
                 <Examples perspective/>
+                <h1>flip-card-react examples (infinite + perspective)</h1>
+                <Examples perspective infinite/>
             </div>
         </div>
     )
