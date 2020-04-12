@@ -66,6 +66,8 @@ export default App;
 | speed | number | The speed of the flip animation, the higher the slower | 0.6 |
 | direction | string | Direction of the flip animation ('horizontal' or 'vertical' ) | horizontal |
 | onFlip | function | Function to be triggered when the card flips | undefined |
+| perspective | bool | If it exists, the card flips with 3D animation (otherwise flat) | undefined |
+| infinite | bool | If it exists, the card always flips to right/up (otherwise toggles between directions) | undefined |
 
 ## License
 
