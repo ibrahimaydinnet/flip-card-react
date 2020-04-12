@@ -8,6 +8,15 @@ const cardStyle: React.CSSProperties = {
     position: 'relative'
 };
 
+const perspectiveStyle: React.CSSProperties = {
+    transform: "perspective(1000px)",
+    msTransform: "perspective(1000px)",
+    WebkitTransform: "perspective(1000px)",
+    transformStyle: "preserve-3d",
+    MozTransformStyle: "preserve-3d",
+    WebkitTransformStyle: "preserve-3d"
+};
+
 interface FlipCardProps {
     front: React.ReactNode;
     back: React.ReactNode;
@@ -15,10 +24,11 @@ interface FlipCardProps {
     direction?: 'horizontal' | 'vertical';
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
+    perspective? : boolean;
 };
 
 const FlipCard: React.FC<FlipCardProps> = (props) => {
-    const {front, back, isFlipped, direction, speed} = props;
+    const {front, back, isFlipped, direction, speed, perspective} = props;
     if (!front || !back) {
         throw new Error('FlipCard requires front and back components!');
     }
@@ -47,7 +57,7 @@ const FlipCard: React.FC<FlipCardProps> = (props) => {
     };
 
     return (
-        <div style={cardStyle}>
+        <div style={perspective ? {...cardStyle, ...perspectiveStyle} : cardStyle}>
             <Face {...frontProps} style={{zIndex:2}}>{front}</Face>
             <Face {...backProps}>{back}</Face>
         </div>

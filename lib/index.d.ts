@@ -6,6 +6,7 @@ interface FlipCardProps {
     direction?: 'horizontal' | 'vertical';
     speed?: number;
     onFlip?: (isFlipped: boolean) => void;
+    perspective?: boolean;
 }
 declare const FlipCard: React.FC<FlipCardProps>;
 export default FlipCard;
